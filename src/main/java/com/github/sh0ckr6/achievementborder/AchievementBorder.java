@@ -7,12 +7,15 @@ import com.github.sh0ckr6.achievementborder.listeners.MobControl;
 import com.github.sh0ckr6.achievementborder.listeners.WorldSetup;
 import com.github.sh0ckr6.achievementborder.managers.ConfigManager;
 import com.github.sh0ckr6.achievementborder.managers.Configuration;
-import org.bukkit.Material;
-import org.bukkit.advancement.Advancement;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.advancement.Advancement;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.java.JavaPluginLoader;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,6 +33,14 @@ import java.util.Map;
 public final class AchievementBorder extends JavaPlugin {
   
   public List<Advancement> advancements = new ArrayList<>();
+  
+  public AchievementBorder() {
+    super();
+  }
+  
+  public AchievementBorder(JavaPluginLoader loader, PluginDescriptionFile descriptionFile, File dataFolder, File file) {
+    super(loader, descriptionFile, dataFolder, file);
+  }
   
   /**
    * Plugin setup
